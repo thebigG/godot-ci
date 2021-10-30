@@ -23,6 +23,7 @@ RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-co
     && mkdir ~/.cache \
     && mkdir -p ~/.config/godot \
     && mkdir -p ~/.local/share/godot/templates/${GODOT_VERSION}.stable \
+    && chmod a+x Godot_v${GODOT_VERSION}-nightly_linux.64
     && mv Godot_v${GODOT_VERSION}-nightly_linux.64 /usr/local/bin/godot \
     && unzip Godot_v${GODOT_VERSION}-stable_export_templates.tpz \
     && mv templates/* ~/.local/share/godot/templates/${GODOT_VERSION}.stable \
