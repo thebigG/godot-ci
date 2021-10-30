@@ -1,6 +1,5 @@
-#Based on https://github.com/abarichello/godot-ci
 FROM ubuntu:focal
-LABEL author="lg"
+LABEL author="https://github.com/aBARICHELLO/godot-ci/graphs/contributors"
 
 USER root
 ENV DEBIAN_FRONTEND=noninteractive
