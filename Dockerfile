@@ -29,21 +29,22 @@ RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-co
     && mv templates/* ~/.local/share/godot/templates/${GODOT_VERSION}.stable \
     && rm -f Godot_v${GODOT_VERSION}-stable_export_templates.tpz
 
-ADD getbutler.sh /opt/butler/getbutler.sh
-RUN bash /opt/butler/getbutler.sh
-RUN /opt/butler/bin/butler -V
-
-ENV PATH="/opt/butler/bin:${PATH}"
-
-# Adding android keystore and settings
-RUN keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 \
-    && mv debug.keystore /root/debug.keystore
-RUN godot -e -q
-RUN echo 'export/android/adb = "/usr/bin/adb"' >> ~/.config/godot/editor_settings-3.tres
-RUN echo 'export/android/jarsigner = "/usr/bin/jarsigner"' >> ~/.config/godot/editor_settings-3.tres
-RUN echo 'export/android/debug_keystore = "/root/debug.keystore"' >> ~/.config/godot/editor_settings-3.tres
-RUN echo 'export/android/debug_keystore_user = "androiddebugkey"' >> ~/.config/godot/editor_settings-3.tres
-RUN echo 'export/android/debug_keystore_pass = "android"' >> ~/.config/godot/editor_settings-3.tres
-RUN echo 'export/android/force_system_user = false' >> ~/.config/godot/editor_settings-3.tres
-RUN echo 'export/android/timestamping_authority_url = ""' >> ~/.config/godot/editor_settings-3.tres
-RUN echo 'export/android/shutdown_adb_on_exit = true' >> ~/.config/godot/editor_settings-3.tres
+# TODO
+# ADD getbutler.sh /opt/butler/getbutler.sh
+# RUN bash /opt/butler/getbutler.sh
+# RUN /opt/butler/bin/butler -V
+#
+# ENV PATH="/opt/butler/bin:${PATH}"
+#
+# # Adding android keystore and settings
+# RUN keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 \
+#     && mv debug.keystore /root/debug.keystore
+# RUN godot -e -q
+# RUN echo 'export/android/adb = "/usr/bin/adb"' >> ~/.config/godot/editor_settings-3.tres
+# RUN echo 'export/android/jarsigner = "/usr/bin/jarsigner"' >> ~/.config/godot/editor_settings-3.tres
+# RUN echo 'export/android/debug_keystore = "/root/debug.keystore"' >> ~/.config/godot/editor_settings-3.tres
+# RUN echo 'export/android/debug_keystore_user = "androiddebugkey"' >> ~/.config/godot/editor_settings-3.tres
+# RUN echo 'export/android/debug_keystore_pass = "android"' >> ~/.config/godot/editor_settings-3.tres
+# RUN echo 'export/android/force_system_user = false' >> ~/.config/godot/editor_settings-3.tres
+# RUN echo 'export/android/timestamping_authority_url = ""' >> ~/.config/godot/editor_settings-3.tres
+# RUN echo 'export/android/shutdown_adb_on_exit = true' >> ~/.config/godot/editor_settings-3.tres
