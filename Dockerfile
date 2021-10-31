@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     zip \
     adb \
     openjdk-8-jdk-headless \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    libmonosgen-2.0-1
 
 ENV GODOT_VERSION "3.3.4"
 
