@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libmono-cil-dev \
     && rm -rf /var/lib/apt/lists/*
 
-ENV GODOT_VERSION "3.3.4"
+ENV GODOT_VERSION "3.4"
 
 RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/Godot-3.x-modules_v${GODOT_VERSION}-headless_nightly_linux.64 \
     && wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_export_templates.tpz \
