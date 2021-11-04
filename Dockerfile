@@ -21,13 +21,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ENV GODOT_VERSION "3.4"
 
 RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/Godot-3.x-modules_v${GODOT_VERSION}-headless_nightly_linux.64 \
-    && wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_export_templates.tpz \
+    && wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/beta6/Godot_v${GODOT_VERSION}-beta6_export_templates.tpz \
     && mkdir ~/.cache \
     && mkdir -p ~/.config/godot \
     && mkdir -p ~/.local/share/godot/templates/${GODOT_VERSION}.beta \
     && chmod a+x Godot-3.x-modules_v${GODOT_VERSION}-headless_nightly_linux.64 \
     && mv Godot-3.x-modules_v${GODOT_VERSION}-headless_nightly_linux.64 /usr/local/bin/godot \
-    && unzip Godot_v${GODOT_VERSION}-stable_export_templates.tpz \
+    && unzip Godot_v${GODOT_VERSION}-beta6_export_templates.tpz \
     && mv templates/* ~/.local/share/godot/templates/${GODOT_VERSION}.beta \
     && rm -f Godot_v${GODOT_VERSION}-stable_export_templates.tpz
 
