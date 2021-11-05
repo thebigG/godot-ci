@@ -23,7 +23,7 @@ ENV GODOT_VERSION "3.4"
 ENV TEMPLATE_VERSION "3.3.4"
 
 RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/Godot-3.x-modules_v${GODOT_VERSION}-headless_nightly_linux.64 \
-    && wget https://downloads.tuxfamily.org/godotengine/${TEMPLATE_VERSION}/beta6/Godot_v${TEMPLATE_VERSION}-stable_export_templates.tpz \
+    && wget https://downloads.tuxfamily.org/godotengine/${TEMPLATE_VERSION}/Godot_v${TEMPLATE_VERSION}-stable_export_templates.tpz \
     && mkdir ~/.cache \
     && mkdir -p ~/.config/godot \
     && mkdir -p ~/.local/share/godot/templates/${GODOT_VERSION}.beta \
