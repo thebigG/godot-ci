@@ -19,7 +19,7 @@ jobs:
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION} ~/.local/share/godot/templates/${GODOT_VERSION}
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.beta ~/.local/share/godot/templates/${GODOT_VERSION}.beta
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
@@ -44,7 +44,7 @@ jobs:
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION} ~/.local/share/godot/templates/${GODOT_VERSION}
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.beta ~/.local/share/godot/templates/${GODOT_VERSION}.beta
       - name: Linux Build
         run: |
           mkdir -v -p build/linux
@@ -69,7 +69,7 @@ jobs:
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION} ~/.local/share/godot/templates/${GODOT_VERSION}
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.beta ~/.local/share/godot/templates/${GODOT_VERSION}.beta
       - name: Web Build
         run: |
           mkdir -v -p build/web
@@ -104,7 +104,7 @@ jobs:
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION} ~/.local/share/godot/templates/${GODOT_VERSION}
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.beta ~/.local/share/godot/templates/${GODOT_VERSION}.beta
       - name: Mac Build
         run: |
           mkdir -v -p build/mac
