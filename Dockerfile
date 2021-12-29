@@ -30,8 +30,9 @@ RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-co
     && mkdir -p ~/.local/share/godot/templates/${TEMPLATE_VERSION}.stable \
     && chmod a+x Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 \
     && mv Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 /usr/local/bin/godot \
+    && mv osx_${TEMPLATE_VERSION}.stable_templates.zip osx.zip
     && unzip linux_${TEMPLATE_VERSION}.stable_templates.zip \
-    && unzip osx_${TEMPLATE_VERSION}.stable_templates.zip \
+    && unzip osx.zip \
     && unzip windows_${TEMPLATE_VERSION}.stable_templates.zip \
     && mkdir templates \
     && cp linux_templates/* templates \
