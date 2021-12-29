@@ -19,18 +19,28 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 ENV GODOT_VERSION "3.3.4"
-ENV TEMPLATE_VERSION "3.4"
+ENV TEMPLATE_VERSION "3.3.4"
 
-RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/Godot-3.x-modules_v${GODOT_VERSION}-headless_nightly_linux.64 \
-    && wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_export_templates.tpz \
+RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 \
+    && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/linux_${TEMPLATE_VERSION}.stable_templates.zip\
+    && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/osx_${TEMPLATE_VERSION}.stable_templates.zip\
+    && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/windows_${TEMPLATE_VERSION}.stable_templates.zip \
     && mkdir ~/.cache \
     && mkdir -p ~/.config/godot \
-    && mkdir -p ~/.local/share/godot/templates/${TEMPLATE_VERSION}.beta \
-    && chmod a+x Godot-3.x-modules_v${GODOT_VERSION}-headless_nightly_linux.64 \
-    && mv Godot-3.x-modules_v${GODOT_VERSION}-headless_nightly_linux.64 /usr/local/bin/godot \
-    && unzip Godot_v${GODOT_VERSION}-stable_export_templates.tpz \
-    && mv templates/* ~/.local/share/godot/templates/${TEMPLATE_VERSION}.beta \
-    && rm -f Godot_v${GODOT_VERSION}-stable_export_templates.tpz
+    && mkdir -p ~/.local/share/godot/templates/${TEMPLATE_VERSION}.stable \
+    && chmod a+x Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 \
+    && mv Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 /usr/local/bin/godot \
+    && unzip linux_${TEMPLATE_VERSION}.stable_templates.zip \
+    && unzip osx_${TEMPLATE_VERSION}.stable_templates.zip \
+    && unzip windows_${TEMPLATE_VERSION}.stable_templates.zip \
+    && mkdir templates \
+    && cp linux_templates/* templates \
+    && cp -r osx_template.app templates \
+    && cp windows_templates/* templates \
+    && mv templates/* ~/.local/share/godot/templates/${TEMPLATE_VERSION}.stable \
+    && rm -f linux_${TEMPLATE_VERSION}.stable_templates.zip \
+    && rm -f osx_${TEMPLATE_VERSION}.stable_templates.zip \
+    && rm -f windows_${TEMPLATE_VERSION}.stable_templates.zip
 
 # TODO
 # ADD getbutler.sh /opt/butler/getbutler.sh
