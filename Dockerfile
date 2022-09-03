@@ -28,22 +28,26 @@ RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-co
     && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/linux_${TEMPLATE_VERSION}.stable_templates.zip\
     && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/osx_${TEMPLATE_VERSION}.stable_templates.zip\
     && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/windows_${TEMPLATE_VERSION}.stable_templates.zip \
+    && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/javascript_${TEMPLATE_VERSION}.stable_templates.zip \
     && mkdir -p ~/.cache \
     && mkdir -p ~/.config/godot \
     && mkdir -p ~/.local/share/godot/templates/${TEMPLATE_VERSION}.stable \
     && chmod a+x Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 \
     && mv Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 /usr/local/bin/godot \
     && mv osx_${TEMPLATE_VERSION}.stable_templates.zip osx.zip \
+    && mv javascript_${TEMPLATE_VERSION}.stable_templates.zip webassembly_release.zip \
     && unzip linux_${TEMPLATE_VERSION}.stable_templates.zip \
     && unzip windows_${TEMPLATE_VERSION}.stable_templates.zip \
     && mkdir templates \
     && cp linux_templates/* templates \
     && cp osx.zip templates \
     && cp windows_templates/* templates \
+    && cp webassembly_release.zip templates \
     && mv templates/* ~/.local/share/godot/templates/${TEMPLATE_VERSION}.stable \
     && rm -f linux_${TEMPLATE_VERSION}.stable_templates.zip \
     && rm -f osx_${TEMPLATE_VERSION}.stable_templates.zip \
-    && rm -f windows_${TEMPLATE_VERSION}.stable_templates.zip
+    && rm -f windows_${TEMPLATE_VERSION}.stable_templates.zip \
+    && rm -f webassembly_release.zip
 
 # TODO
 # ADD getbutler.sh /opt/butler/getbutler.sh
