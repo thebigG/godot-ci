@@ -19,34 +19,31 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install gdtoolkit
+RUN pip3 install "gdtoolkit==4.*"
 
-ENV GODOT_VERSION "3.4.2"
-ENV TEMPLATE_VERSION "3.4.2"
+ENV GODOT_VERSION "4.1.stable"
+ENV TEMPLATE_VERSION "4.1.stable"
 
-RUN wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 \
-    && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/linux_${TEMPLATE_VERSION}.stable_templates.zip\
-    && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/osx_${TEMPLATE_VERSION}.stable_templates.zip\
-    && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/windows_${TEMPLATE_VERSION}.stable_templates.zip \
-    && wget https://github.com/thebigG/godot-3.x-modules/releases/download/Godot-continuous-release/javascript_${TEMPLATE_VERSION}.stable_templates.zip \
+RUN wget https://downloads.tuxfamily.org/godotengine/4.1/Godot_v4.1-stable_linux.x86_32.zip \
+    && wget https://downloads.tuxfamily.org/godotengine/4.1/Godot_v4.1-stable_export_templates.tpz \
     && mkdir -p ~/.cache \
     && mkdir -p ~/.config/godot \
-    && mkdir -p ~/.local/share/godot/templates/${TEMPLATE_VERSION}.stable \
+    && mkdir -p ~/.local/share/godot/export_templates/${TEMPLATE_VERSION}.stable \
     && chmod a+x Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 \
     && mv Godot-3.x-modules_v${GODOT_VERSION}_headless_nightly_linux.64 /usr/local/bin/godot \
-    && mv osx_${TEMPLATE_VERSION}.stable_templates.zip osx.zip \
-    && mv javascript_${TEMPLATE_VERSION}.stable_templates.zip webassembly_release.zip \
-    && unzip linux_${TEMPLATE_VERSION}.stable_templates.zip \
-    && unzip windows_${TEMPLATE_VERSION}.stable_templates.zip \
-    && mkdir templates \
-    && cp linux_templates/* templates \
-    && cp osx.zip templates \
-    && cp windows_templates/* templates \
-    && cp webassembly_release.zip templates \
-    && mv templates/* ~/.local/share/godot/templates/${TEMPLATE_VERSION}.stable \
-    && rm -f linux_${TEMPLATE_VERSION}.stable_templates.zip \
-    && rm -f osx_${TEMPLATE_VERSION}.stable_templates.zip \
-    && rm -f windows_${TEMPLATE_VERSION}.stable_templates.zip \
+    && mv osx_${TEMPLATE_VERSION}.stable_export_templates.zip osx.zip \
+    && mv javascript_${TEMPLATE_VERSION}.stable_export_templates.zip webassembly_release.zip \
+    && unzip linux_${TEMPLATE_VERSION}.stable_export_templates.zip \
+    && unzip windows_${TEMPLATE_VERSION}.stable_export_templates.zip \
+    && mkdir export_templates \
+    && cp linux_export_templates/* export_templates \
+    && cp osx.zip export_templates \
+    && cp windows_export_templates/* export_templates \
+    && cp webassembly_release.zip export_templates \
+    && mv export_templates/* ~/.local/share/godot/export_templates/${TEMPLATE_VERSION}.stable \
+    && rm -f linux_${TEMPLATE_VERSION}.stable_export_templates.zip \
+    && rm -f osx_${TEMPLATE_VERSION}.stable_export_templates.zip \
+    && rm -f windows_${TEMPLATE_VERSION}.stable_export_templates.zip \
     && rm -f webassembly_release.zip
 
 # TODO
