@@ -39,7 +39,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: thebigg1/godot-ci:latest
+          tags: thebigg1/godot-ci:3.4.2
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       -
@@ -74,7 +74,7 @@ jobs:
           file: ./linux_templates/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: thebigg1/godot-linux-templates:latest
+          tags: thebigg1/godot-linux-templates:3.4.2
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image digest
@@ -108,7 +108,7 @@ jobs:
           file: ./windows_templates/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: thebigg1/godot-windows-templates:latest
+          tags: thebigg1/godot-windows-templates:3.4.2
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Image digest
