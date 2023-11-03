@@ -31,7 +31,7 @@ RUN mkdir -p ~/.config/godot
 RUN mkdir -p ~/.local/share/godot/export_templates/${TEMPLATE_VERSION}.stable 
 RUN unzip Godot_v4.1-stable_linux.x86_32.zip
 RUN chmod a+x Godot_v${GODOT_VERSION}-stable_linux.x86_32 
-RUN mv Godot_v${GODOT_VERSION}-stable_linux.x86_32  /usr/local/bin/godot 
+RUN mv "Godot_v${GODOT_VERSION}-stable_linux.x86_32"  "/usr/local/bin/godot"
 RUN unzip Godot_v4.1-stable_export_templates.tpz 
 RUN mv templates/* ~/.local/share/godot/export_templates/${TEMPLATE_VERSION}.stable 
 # RUN rm -f linux_${TEMPLATE_VERSION}.stable_export_templates.zip
