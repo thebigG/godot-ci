@@ -1,0 +1,4 @@
+res://default_env.tres
+res://scenes/Main.tscn
+res://scripts/EnemyGenerator.gd
+res://scripts/Projectile.gd

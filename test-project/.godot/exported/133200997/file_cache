@@ -1,0 +1,13 @@
+res://scenes/Arena.tscn::5e91ef019e380c5f3eb200f77d68ead9::1699224340::res://.godot/exported/133200997/export-a9a72b210d1749cdd21102bc10b2de66-Arena.scn
+res://scenes/Background.tscn::17971e80bb982677ad9a5e231d15c6cb::1699224340::res://.godot/exported/133200997/export-4913db11209a89d2c1e21ad0ff2e6654-Background.scn
+res://scenes/Base.tscn::56cc762c18477df966681db2a9c09e9b::1699224340::res://.godot/exported/133200997/export-aa902d5b3642cce4f18a9e230c1d67f8-Base.scn
+res://scenes/Cannon.tscn::8b34ccc432548c0ba407161139cee4e1::1699224340::res://.godot/exported/133200997/export-587d5fc47a130db56c5c5f89657071e9-Cannon.scn
+res://scenes/ColoredEntity.tscn::fc147c23eebf0e1e2bd62d55d0213570::1699224340::res://.godot/exported/133200997/export-4d7c2750a3614ac02772ca100d83b893-ColoredEntity.scn
+res://scenes/EnemyGenerator.tscn::89095590b2a459aac60a3056c1cb0209::1699224340::res://.godot/exported/133200997/export-90dccf885e0a8aa4cb2c0ac64578bafe-EnemyGenerator.scn
+res://scenes/Game.tscn::144421e4caad416794c24a06926095ac::1699224340::res://.godot/exported/133200997/export-ff8ceb9b2bd5b48777d3d52e811276ab-Game.scn
+res://scenes/GLOBAL.tscn::f64f4e4ec31e6e9166b84657fd597b84::1699224340::res://.godot/exported/133200997/export-22385f011606b94cf5d78cf2f23ebb67-GLOBAL.scn
+res://scenes/HUD.tscn::0368a3c51aa1b62ab70742c6cee6dfd6::1699224340::res://.godot/exported/133200997/export-2ea9781d6f9f7562c1d276c7fdd0b0ab-HUD.scn
+res://scenes/Main.tscn::7bd06b2ccc6c616cc8dcedc9eaa5a750::1699224880::res://.godot/exported/133200997/export-4a24720ee5e787dbe30abc634fa3679d-Main.scn
+res://scenes/Player.tscn::fa5d4f089935eaf68f3d887c6fbfe315::1699224340::res://.godot/exported/133200997/export-e8220e74d1354b9e6b168b513689419c-Player.scn
+res://scenes/Projectile.tscn::388a7821e0700ae6571067ddf8fd8d34::1699224340::res://.godot/exported/133200997/export-a7aac28efb4a523f73f1a023aa5edacd-Projectile.scn
+res://default_env.tres::27a9ed2002a504161c5f953ba2251791::1699224880::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res

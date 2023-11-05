@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var EnemyScene: PackedScene = preload("res://scenes/Projectile.tscn")
+@onready var EnemyScene: PackedScene = preload("res://scenes/Projectile.tscn")
 signal start
 signal stop
 
@@ -11,11 +11,11 @@ func _ready():
 	self.emit_signal("stop")
 
 func setup_enemy() -> void:
-	self.Enemy = EnemyScene.instance()
-	Enemy.setup(GLOBAL.MISSILE, GLOBAL.MISSILE_SPEED["max"])
+	self.Enemy = EnemyScene.instantiate()
+	Enemy.setup(GLOBAL.SpriteType.MISSILE, GLOBAL.MISSILE_SPEED["max"])
 
 func spawn_and_shoot_enemy() -> void:
-	var Duplicate = Enemy.duplicate(Node.DUPLICATE_USE_INSTANCING)
+	var Duplicate = Enemy.duplicate(Node.DUPLICATE_USE_INSTANTIATION)
 	Duplicate.set_random_color()
 	Duplicate.update_collision_layer()
 	$Enemies.add_child(Duplicate)
