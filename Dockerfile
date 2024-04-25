@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     openjdk-11-jdk-headless \
     rsync \
     python3-pip \
+    make \
     && rm -rf /var/lib/apt/lists/*
 
 ARG GODOT_VERSION="4.2.1"
