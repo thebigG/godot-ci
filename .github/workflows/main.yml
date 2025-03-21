@@ -39,7 +39,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: thebigg1/godot-ci:v4.2.2.stable.official_15073afe3
+          tags: thebigg1/godot-ci:v4.2.2.stable.official_4c311cbee
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       -
