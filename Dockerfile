@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     make \
     && rm -rf /var/lib/apt/lists/*
 
-ARG GODOT_VERSION="4.2.2"
+ARG GODOT_VERSION="4.4"
 ARG RELEASE_NAME="stable"
 ARG SUBDIR=""
 ARG GODOT_TEST_ARGS=""
