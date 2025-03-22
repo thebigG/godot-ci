@@ -1,7 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://cw6qhn1e4hyv1"]
 
-[ext_resource path="res://scripts/ColoredEntity.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://q2whg2qlfbkm" path="res://scripts/ColoredEntity.gd" id="1"]
 
 [node name="ColoredEntity" type="Node2D"]
-script = ExtResource( 1 )
-
+script = ExtResource("1")
