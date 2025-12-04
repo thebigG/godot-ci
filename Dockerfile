@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rsync \
     python3-pip \
     make \
+    clang-format \
     && rm -rf /var/lib/apt/lists/*
 
 ARG GODOT_VERSION="4.5"
